@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.NewsArticles>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@using Umbraco.Core.PropertyEditors.ValueConverters;
+@{
+    Layout = "Main.cshtml";
+}
+@{
+    var articles = Umbraco.ContentAtRoot().DescendantsOrSelfOfType("newsArticles").FirstOrDefault();
+}
+
+@Html.Partial("Jumbotron")
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-8 bg-light">
+            <!-- Render the news -->
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                    @foreach (var article in articles.Children.OrderByDescending(o => o.Value<DateTime>("postDate")))
+                    {
+                        var ImgCropper = article.Value<ImageCropperValue>("articleImage");
+                        var thumbnailUrl = ImgCropper.Src + ImgCropper.GetCropUrl("Thumbnail");
+                        
+                        <div class="col">
+                            <div class="card mt-25 mb-25">
+                                <a class="card-block stretched-link text-decoration-none" href="@article.Url">
+                                    <div class="card-horizontal">
+                                        <div class="img-square-wrapper">
+                                            <img src="@thumbnailUrl"/>
+                                        </div>
+                                        <div class="card-body">
+                                            <h4 class="card-title pb-25">@article.Name</h4>
+                                            <p class="card-text">@article.Value("title")</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                         </div>
+                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-4 bg-dark text-white text-center">
+            <!-- Render the filters -->
+            <h3>Filters go here</h3>
+        </div>
+    </div>
+</div>

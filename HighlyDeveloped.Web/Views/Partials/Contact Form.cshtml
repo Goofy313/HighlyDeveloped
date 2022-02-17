@@ -1,0 +1,59 @@
+﻿@model HighlyDeveloped.Core.ViewModel.ContactFormViewModel
+@using HighlyDeveloped.Core.Controllers
+
+@if ((string)TempData["status"] == "OK")
+{
+<text>
+<div class="container">
+    <div class="row">
+        <div class="col text-center p-5">
+            <p>Thanks for your comment!</p>
+        </div>
+    </div>
+</div>
+</text>
+
+}
+
+else
+{
+    using (Html.BeginUmbracoForm<ContactController>("HandleContactForm"))
+    {
+        @Html.ValidationSummary()
+        @Html.AntiForgeryToken()
+
+        <!-- Name -->
+        <div class="form-group pt-4">
+            <label for="your-name-textbox" class="col-sm-2 col-form-label">Your name</label>
+            <span class="field-validation-valid" data-valmsg-for="Name" datavalmsg-replace="true"></span>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control form-control-lg", placeholder = "Your Name", maxlength = "80" })
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="your-email-textbox" class="col-sm-2 col-form-label">Email Address</label>
+            <span class="field-validation-valid" data-valmsg-for="Name" datavalmsg-replace="true"></span>
+            @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control form-control-lg", placeholder = "Your Email Address", maxlength = "255" })
+        </div>
+
+        <!-- Subject -->
+        <div class="form-group">
+            <label for="your-subject-textbox" class="col-sm-2 col-form-label">Subject Enquiry</label>
+            <span class="field-validation-valid"></span>
+            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control form-control-lg", placeholder = "Subject enquiry", maxlength = "255" })
+        </div>
+
+        <!-- Comments -->
+        <div class="form-group">
+            <label for="your-subject-textbox" class="col-sm-2 col-form-label">Comments</label>
+            <span class="field-validation-valid"></span>
+            @Html.TextAreaFor(m => m.Comment, new { @class = "form-control form-control-lg", placeholder = "Your comment", maxlength = "500" })
+        </div>
+        <br>
+
+        <div class="form-group">
+            <button class="btn btn-outline-primary btn-lg" typeof="submit">Send</button>
+        </div>
+    }
+}
+

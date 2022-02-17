@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Web.Models
+
+<section class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center py-5">
+                <h1 class="display-4">@Model.Value("cTATitle")</h1>
+                <p class="lead">@Model.Value("cTAText")</p>
+                @{
+                    var link = Model.Value<Link>("cTALink");
+                    if (link != null)
+                    {
+                    <a href="@link.Url" target="@link.Target" class="btn btn-secondary">@link.Name</a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+

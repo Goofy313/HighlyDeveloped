@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@using Umbraco.Core.PropertyEditors.ValueConverters;
+
+@{
+	var news = Umbraco.Content(Guid.Parse("038a3971-e407-439c-90bf-478ec6e7293e"))
+    .ChildrenOfType("newsArticle")
+    .Where(x => x.IsVisible())
+    .OrderByDescending(x => x.CreateDate)
+    .Take(3);
+}
+
+<div class="container py-5">
+<h2 class="display-4 text-center pb-5">Latest News</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+@foreach (var item in news)
+{   
+  var imgCropper = item.Value<ImageCropperValue>("articleImage");
+  var thumbnailUrl = imgCropper.Src + imgCropper.GetCropUrl("Thumbnail");
+
+  <div class="col">
+    <div class="card h-100">
+      <img src="@thumbnailUrl" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">@item.Name</h5>
+        <p class="card-text">@item.Value("title")</p>
+        
+      </div>
+      <div class="card-footer text-muted">
+        <a href="@item.Url">Read more</a>
+      </div>
+    </div>
+  </div>
+}
+</div>
+</div>    

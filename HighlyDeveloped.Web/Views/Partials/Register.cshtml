@@ -1,0 +1,64 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<HighlyDeveloped.Core.ViewModel.RegisterViewModel>
+@using HighlyDeveloped.Core.Controllers
+@{ 
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Register Form</h1>
+            @Html.ValidationSummary()
+            @using (Html.BeginUmbracoForm<RegisterController>("HandleRegister"))
+            {
+                <h2 class="h3">Fill in the details below to register.</h2>
+
+                @Html.AntiForgeryToken();
+
+                @*<div class="form-group">
+                <label for="exampleFormControlInput1" class="form-label">@Html.LabelFor(m => m.FirstName)</label>
+                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control,", @type = "text" })
+                @Html.ValidationMessageFor(m => m.FirstName)
+            </div>*@
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">@Html.LabelFor(m => m.FirstName)</label>
+                    <input type="text" class="form-control">
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">@Html.LabelFor(m => m.LastName)</label>
+                    <input type="text" class="form-control">
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">@Html.LabelFor(m => m.EmailAddress)</label>
+                    <input type="email" class="form-control" placeholder="test@example.com">
+                    @Html.ValidationMessageFor(m => m.EmailAddress)
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">@Html.LabelFor(m => m.Username)</label>
+                    <input type="text" class="form-control">
+                    @Html.ValidationMessageFor(m => m.Username)
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">@Html.LabelFor(m => m.Password)</label>
+                    <input type="password" class="form-control" autocomplete="off">
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">@Html.LabelFor(m => m.ConfirmPassword)</label>
+                    <input type="password" class="form-control" autocomplete="off">
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword)
+                </div>
+
+                <button type="submit" value="Register" class="btn btn-primary" name="register-button">Register</button>
+            }
+        </div>
+    </div>
+</div>

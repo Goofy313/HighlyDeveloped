@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.GenericPage>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+	Layout = "Main.cshtml";
+}
+
+@Html.Partial("Jumbotron")
+
+<!-- To render the contents of Grid Layout -->
+@Html.GetGridHtml(Model,"genericGrid")
