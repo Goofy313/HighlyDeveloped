@@ -62,7 +62,6 @@ namespace HighlyDeveloped.Core.Controllers
                 _emailService.SendContactNotificationToAdmin(vm);
 
                 // Return confirmation message
-
                 TempData["status"] = "OK";
 
                 return RedirectToCurrentUmbracoPage();

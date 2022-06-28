@@ -24,6 +24,7 @@ namespace HighlyDeveloped.Core.ViewModel
         public string Username { get; set; }
         [DisplayName("Email")]
         [Required(ErrorMessage = "Please enter your Email Address")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string EmailAddress { get; set; }
         [UIHint("Password")]
         [DisplayName("Password")]

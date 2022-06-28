@@ -344,9 +344,11 @@ Umbraco.Forms.Web.Editors.WorkflowController, Umbraco.Forms.Web, Version=8.10.2.
 Umbraco.Forms.Web.Dashboards.FormsDashboard, Umbraco.Forms.Web, Version=8.10.2.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Forms.Web.Controllers.UmbracoFormsController, Umbraco.Forms.Web, Version=8.10.2.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Forms.Web.Components.WebComposer, Umbraco.Forms.Web, Version=8.10.2.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.RegisterServicesComposer, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.Controllers.ContactController, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.Controllers.RegisterController, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.RegisterServicesComposer, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.AccountController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.ContactController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.LoginController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.RegisterController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.ModelsBuilderDashboard, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.Compose.ModelsBuilderComposer, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.BackOffice.MediaTypeModelValidator, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -386,7 +388,7 @@ Umbraco.Web.Compose.NestedContentPropertyComposer, Umbraco.Web, Version=8.0.0.0,
 Umbraco.Web.Cache.DistributedCacheBinderComposer, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Forms.Web.Installer.ClientDependencyStartupComposer, Umbraco.Forms.Web, Version=8.10.2.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Forms.Web.Components.WebComposer, Umbraco.Forms.Web, Version=8.10.2.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.RegisterServicesComposer, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.RegisterServicesComposer, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
 Umbraco.ModelsBuilder.Embedded.Compose.ModelsBuilderComposer, Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Core.PropertyEditors.IPropertyValueConverter
@@ -433,8 +435,10 @@ Umbraco.Web.Controllers.UmbLoginStatusController, Umbraco.Web, Version=8.0.0.0, 
 Umbraco.Web.Controllers.UmbRegisterController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Controllers.UmbLoginController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Forms.Web.Controllers.UmbracoFormsController, Umbraco.Forms.Web, Version=8.10.2.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.Controllers.ContactController, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.Controllers.RegisterController, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.AccountController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.ContactController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.LoginController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.RegisterController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Web.Mvc.IRenderMvcController
 
@@ -543,8 +547,10 @@ Umbraco.Web.Controllers.UmbLoginStatusController, Umbraco.Web, Version=8.0.0.0, 
 Umbraco.Web.Controllers.UmbRegisterController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Web.Controllers.UmbLoginController, Umbraco.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=null
 Umbraco.Forms.Web.Controllers.UmbracoFormsController, Umbraco.Forms.Web, Version=8.10.2.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.Controllers.ContactController, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-HighlyDeveloped.Core.Controllers.RegisterController, HighlyDeveloped.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.AccountController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.ContactController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.LoginController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
+HighlyDeveloped.Core.Controllers.RegisterController, HighlyDeveloped.Core, Version=1.0.0.1, Culture=neutral, PublicKeyToken=null
 
 Umbraco.Core.Dashboards.IDashboard
 

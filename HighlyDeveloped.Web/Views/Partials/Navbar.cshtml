@@ -18,6 +18,31 @@
                             <a class="nav-link" aria-current="page" href="@page.Url">@page.Name</a>
                         </li>
                     }
+
+                    @*Get the logged in status from Umbraco*@
+
+                    @if (Umbraco.MemberIsLoggedOn())
+                    {
+                    //Drop down
+                    //Log out
+                    //My Account
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-user-circle"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/my-account">My Account</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/logout">Log Out</a>
+                        </div>
+                    </li>   
+                    }
+                    else
+                    {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    }
                 </ul>
             </div>
         </div>

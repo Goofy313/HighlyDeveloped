@@ -1,0 +1,59 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<HighlyDeveloped.Core.ViewModel.LoginViewModel>
+@{
+    // Validation
+    Html.EnableClientValidation();
+    Html.EnableUnobtrusiveJavaScript();
+
+    var myUser = System.Web.Security.Membership.GetUser();
+}
+<!-- Are we already logged in-->
+@if (Umbraco.MemberIsLoggedOn())
+{
+    <!-- If, yes - show logout-->
+    if (myUser != null)
+    {
+        <p><strong>Logged in as</strong> @myUser.UserName</p>
+        <a href="/logout" class="btn btn-danger">Log out</a> <i class="fa fa-arrow-right"></i>
+    }
+}
+else
+{
+    <!-- If not, show the log in form-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            @using (Html.BeginUmbracoForm<HighlyDeveloped.Core.Controllers.LoginController>("HandleLogin"))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Username)
+                    @Html.TextBoxFor(m => m.Username, new
+                    {
+                        placeholder = "Username", @class = "form-control"
+                    })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password)
+                    @Html.PasswordFor(m => m.Password, new
+                    {
+                        placeholder = "Password", @class = "form-control"
+                    })
+                </div>
+                // post back redirect URL
+                @Html.HiddenFor(m => m.RedirectUrl)
+                <br />
+                <button name="login" type="submit" class="btn btn-primary">Login</button>
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="/forgotten-password/">Forgotten password?</a>
+        </div>
+    </div>
+</div>
+}
+
